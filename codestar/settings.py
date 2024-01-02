@@ -15,6 +15,7 @@ import os
 import dj_database_url
 if os.path.isfile('env.py'):
     import env
+    
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -27,9 +28,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.environ.get("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ["8000-muzaffarahm-djangoblog2-wsornmd5h1f.ws-eu107.gitpod.io" ,
+ALLOWED_HOSTS = ['8000-muzaffarahm-djangoblog2-kxka7x5mod3.ws-eu107.gitpod.io'  ,
 '.herokuapp.com']
 
 
@@ -90,6 +91,7 @@ DATABASES = {
     'default': dj_database_url.parse(os.environ.get("DATABASE_URL"))
 }
 
+CSRF_TRUSTED_ORIGINS = ['https://8000-muzaffarahm-djangoblog2-kxka7x5mod3.ws-eu107.gitpod.io']
 
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
